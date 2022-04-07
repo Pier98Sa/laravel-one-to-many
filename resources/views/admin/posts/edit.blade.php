@@ -1,5 +1,7 @@
 @extends('admin.layouts.base')
-@section('pageTitle', 'BoolPress - Nuovo Post')
+@section('pageTitle') 
+  BoolPress - Modifica {{$post->title}}
+@endsection
 @section('content')
   <div class="container">
       <div class="row justify-content-center">
@@ -15,9 +17,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="author">Autore</label>
-                    <input type="text" class="form-control" id="author" name="author" value="{{old('author', $post->author)}}">
-                  </div>
+                  <label for="author">Autore</label>
+                  <input type="text" class="form-control" id="author" name="author" value="{{old('author', $post->author)}}">
+                </div>
+
+                <div class="form-group">
+                  <label for="category_id">Categoria</label>
+                  <select id="category_id" name="category_id" class="form-control">
+                    
+                    <option value="">Nessuna categoria selezionata</option>
+                    @foreach ($categories as $category)
+                      <option {{(old('category_id', $post->category->id) == $category->id) ? 'selected': ''}} value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                  </select>
+                </div>
 
                 <div class="form-group">
                   <label for="content">Contenuto del post</label>

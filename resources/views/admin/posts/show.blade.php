@@ -1,5 +1,7 @@
 @extends('admin.layouts.base')
-@section('pageTitle', 'BoolPress - Nuovo Post')
+@section('pageTitle') 
+    BoolPress - {{$post->title}}
+@endsection
 @section('content')
   <div class="container">
       <div class="row justify-content-center">
@@ -8,6 +10,7 @@
 
               <div><strong>Titolo: </strong>{{$post->title}}</div>
               <div><strong>Autore: </strong>{{$post->author}}</div>
+              <div><strong>Categoria: </strong>{{$post->category->name??null}}</div>
               <div><strong>Contenuto: </strong>{{$post->content}}</div>
               <div><strong>Slug: </strong>{{$post->slug}}</div>
              

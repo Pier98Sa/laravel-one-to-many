@@ -1,6 +1,6 @@
 @extends('admin.layouts.base')
 
-@section('pageTitle', 'BoolPress')
+@section('pageTitle', 'BoolPress - Categorie')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

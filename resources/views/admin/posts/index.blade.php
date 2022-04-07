@@ -17,6 +17,7 @@
                         <th scope="col">Contenuto</th>
                         <th scope="col">Autore</th>
                         <th scope="col">Slug</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Azioni</th>
                     </tr>
                     </thead>
@@ -28,6 +29,7 @@
                             <td>{{substr($post->content,0,30)}}</td>
                             <td>{{$post->author}}</td>
                             <td>{{$post->slug}}</td>
+                            <td>{{$post->category->name??null}}</td>
                             <td class="d-flex"> 
                                 <!--buttoni delle azioni-->
                                 <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-primary">Show</a>
