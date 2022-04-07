@@ -23,6 +23,7 @@ Route::middleware('auth')
         //admin
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('posts', 'PostController');
+        Route::resource('categories', 'CategoryController');
     });
 
 // da mettere sempre alla fine dela lista

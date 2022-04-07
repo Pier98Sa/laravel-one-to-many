@@ -37,7 +37,10 @@
                             <a class="nav-link" href="{{route('admin.home')}}">Dashbord</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.posts.index')}}">Post</a>
+                            <a class="nav-link" href="{{route('admin.posts.index')}}">Posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.categories.index')}}">Categories</a>
                         </li>
                     </ul>
 
