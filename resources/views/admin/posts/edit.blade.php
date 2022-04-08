@@ -6,8 +6,7 @@
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-12">
-              <h1 class="text-center">Crea un nuovo post </h1>
-
+              <h1 class="text-center">Modifica "{{$post->title}}"</h1>
               <form method="POST" action="{{ route('admin.posts.update', $post->id) }}">
                 @csrf
                 @method('PUT')
@@ -24,10 +23,10 @@
                 <div class="form-group">
                   <label for="category_id">Categoria</label>
                   <select id="category_id" name="category_id" class="form-control">
-                    
-                    <option value="">Nessuna categoria selezionata</option>
+                   
+                    <option {{('category_id' == '')? 'selected' : ''}} value="">Nessuna categoria selezionata</option>
                     @foreach ($categories as $category)
-                      <option {{(old('category_id', $post->category->id) == $category->id) ? 'selected': '' }} value="{{$category->id}}">{{$category->name}}</option>
+                      <option {{(old('category_id', ) == $category->id) ? 'selected': '' }} value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                   </select>
                 </div>
