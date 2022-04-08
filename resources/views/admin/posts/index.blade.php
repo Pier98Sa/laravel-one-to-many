@@ -29,7 +29,7 @@
                             <td>{{substr($post->content,0,30)}}</td>
                             <td>{{$post->author}}</td>
                             <td>{{$post->slug}}</td>
-                            <td>{{$post->category->name??null}}</td>
+                            <td>{{isset($post->category)? $post->category->name : '-'}}</td>
                             <td class="d-flex"> 
                                 <!--buttoni delle azioni-->
                                 <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-primary">Show</a>

@@ -10,12 +10,9 @@
 
               <div><strong>Titolo: </strong>{{$post->title}}</div>
               <div><strong>Autore: </strong>{{$post->author}}</div>
-              <div><strong>Categoria: </strong>{{$post->category->name??null}}</div>
+              <div><strong>Categoria: </strong>{{isset($post->category)? $post->category->name : '-'}}</div>
               <div><strong>Contenuto: </strong>{{$post->content}}</div>
               <div><strong>Slug: </strong>{{$post->slug}}</div>
-             
-              
-
 
               <a href="{{route('admin.posts.index')}}" class="btn btn-primary">Ritorna alla lista</a>
 

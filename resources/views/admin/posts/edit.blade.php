@@ -27,7 +27,7 @@
                     
                     <option value="">Nessuna categoria selezionata</option>
                     @foreach ($categories as $category)
-                      <option {{(old('category_id', $post->category->id) == $category->id) ? 'selected': ''}} value="{{$category->id}}">{{$category->name}}</option>
+                      <option {{(old('category_id', $post->category->id) == $category->id) ? 'selected': '' }} value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                   </select>
                 </div>
